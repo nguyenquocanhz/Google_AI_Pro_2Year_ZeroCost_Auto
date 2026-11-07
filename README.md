@@ -1,46 +1,82 @@
 ========================================================================
-  Google AI Pro (5 TB) 零成本两年 (US$0.00 -> 24个月) 全自动控制台
+  Bảng điều khiển tự động Google AI Pro (5 TB) miễn phí hai năm
+  (US$0.00 -> 24 tháng)
 ========================================================================
 
-【一、运行环境要求】
-1. Windows 10 / 11 系统
-2. 已安装 Google Chrome 浏览器（默认路径即可）
-3. 已安装 Python 3.10 或更高版本（安装时勾选 Add Python to PATH）
-4. 网络环境：本机开启美区（US）代理，或在控制台左侧填写代理模板
+【I. YÊU CẦU VỀ MÔI TRƯỜNG】
+1. Hệ điều hành Windows 10 / 11.
+2. Đã cài đặt trình duyệt Google Chrome (dùng đường dẫn mặc định).
+3. Đã cài đặt Python 3.10 trở lên (chọn Add Python to PATH khi cài đặt).
+4. Mạng: bật proxy khu vực Hoa Kỳ (US) trên máy hoặc nhập mẫu proxy ở cột bên trái của bảng điều khiển.
+5. KHUYẾN NGHỊ ĐỔI VPN VÀ MÚI GIỜ: sử dụng NordVPN, Proton VPN hoặc Hola tại khu vực Hoa Kỳ (US). Đổi múi giờ Windows khớp với vị trí VPN để tránh rò rỉ thông tin vị trí. Kiểm tra IP đầu ra trước khi chạy.
 
-【二、快速启动步骤】
-1. 首次使用请双击运行：【1_首次运行_安装依赖并启动.bat】
-2. 之后日常使用直接双击：【2_启动控制台.bat】
-3. 浏览器会自动打开控制台页面：http://127.0.0.1:8765
+【II. CÁC BƯỚC KHỞI ĐỘNG NHANH】
+1. Khi sử dụng lần đầu, nhấp đúp để chạy: 【1_Cai_dat_va_khoi_chay.bat】
+2. Từ những lần sau, chỉ cần nhấp đúp: 【2_Khoi_chay_bang_dieu_khien.bat】
+3. Trình duyệt sẽ tự động mở trang bảng điều khiển: http://127.0.0.1:8765
 
-【三、自定义填写支付卡 & 跑号说明】
-1. 填写支付卡（必填）：
-   - 在网页左侧【全局配置与内联免税绑卡】区域，填入你自己的 Visa 或 Mastercard 外币卡：
-     * 卡号（16位数字）
-     * 有效期（月 / 年，如 08 / 29）
-     * 安全码（3位 CVC）
-     * 持卡人英文姓名
-     * 免税邮编默认已填好 97201（美国俄勒冈免税州），无需修改
-   - 填写后点击【💾 保存配置】。
-   - 注：脚本内置严格 0 元消费保护，仅在结账弹窗确认为 US$0.00 时才会点击订阅，全程 0 扣费。
+【III. TÙY CHỈNH THẺ THANH TOÁN VÀ HƯỚNG DẪN CHẠY TÀI KHOẢN】
+1. Nhập thông tin thẻ thanh toán (bắt buộc):
+   - Trong khu vực 【Cấu hình chung và liên kết thẻ miễn thuế trực tiếp】 ở bên trái trang web, nhập thông tin thẻ Visa hoặc Mastercard quốc tế của bạn:
+     * Số thẻ (16 chữ số)
+     * Ngày hết hạn (tháng / năm, ví dụ: 08 / 29)
+     * Mã bảo mật (CVC gồm 3 chữ số)
+     * Tên chủ thẻ bằng tiếng Anh
+     * Mã bưu chính miễn thuế đã được điền sẵn là 97201 (Oregon, bang miễn thuế của Hoa Kỳ), không cần thay đổi
+   - Sau khi nhập, nhấp vào 【💾 Lưu cấu hình】.
+   - Lưu ý: tập lệnh có cơ chế bảo vệ nghiêm ngặt để không phát sinh chi phí. Chỉ khi cửa sổ thanh toán xác nhận số tiền là US$0.00, tập lệnh mới nhấp vào đăng ký; toàn bộ quá trình không bị trừ tiền.
 
-2. 批量导入 Google 账号：
-   - 在网页右侧【批量放号导入区】粘贴账号（每行一个），支持以下任意格式：
-     * 邮箱----密码----辅助邮箱
-     * 邮箱----密码----辅助邮箱----2FA密钥
-     * 邮箱----密码----2FA密钥
-   - 点击【➕ 一键导入账号列表】。
+2. Nhập hàng loạt tài khoản Google:
+   - Dán danh sách tài khoản vào khu vực 【Nhập hàng loạt tài khoản】 ở bên phải trang web (mỗi dòng một tài khoản). Hỗ trợ bất kỳ định dạng nào sau đây:
+     * email----mật_khẩu----email_khôi_phục
+     * email----mật_khẩu----email_khôi_phục----khóa_2FA
+     * email----mật_khẩu----khóa_2FA
+   - Nhấp vào 【➕ Nhập toàn bộ danh sách tài khoản】.
 
-3. 开始全自动执行：
-   - 点击单个账号右侧的【▶ 执行】或顶部的【▶ 批量全自动执行】。
-   - 脚本会自动完成：
-     Step 1: 自动登录 Google 并通过辅助邮箱 / 2FA 验证
-     Step 2: 内联免税绑卡 + 首层 12 个月免费包 (US$0.00)
-     Step 3: 叠加二层 6 个月免费包 (US$0.00 -> 18个月)
-     Step 4: 叠加三层 6 个月免费包 (US$0.00 -> 24个月封顶)
-     Step 5: 自动前往 Google Play 取消自动续订，锁死 2 年到期权益并截图验真
+3. Bắt đầu chạy tự động:
+   - Nhấp vào 【▶ Thực thi】 bên cạnh từng tài khoản hoặc 【▶ Chạy tự động hàng loạt】 ở đầu trang.
+   - Tập lệnh sẽ tự động hoàn thành các bước sau:
+     Bước 1: Tự động đăng nhập Google và xác minh bằng email khôi phục / 2FA
+     Bước 2: Liên kết thẻ miễn thuế trực tiếp + gói miễn phí 12 tháng đầu tiên (US$0.00)
+     Bước 3: Cộng thêm gói miễn phí 6 tháng thứ hai (US$0.00 -> tổng cộng 18 tháng)
+     Bước 4: Cộng thêm gói miễn phí 6 tháng thứ ba (US$0.00 -> đạt mức tối đa 24 tháng)
+     Bước 5: Tự động chuyển đến Google Play để hủy gia hạn tự động, giữ quyền lợi cho đến khi hết hạn sau 2 năm và chụp ảnh màn hình để xác minh
+
+【IV. BOT TELEGRAM ĐIỀU KHIỂN DASHBOARD】
+Bot dùng Telegram Bot API qua long polling, không cần cài thêm thư viện Python và không thay đổi automation hiện có.
+
+1. Tạo bot và lấy token:
+   - Mở @BotFather trên Telegram, gửi /newbot và làm theo hướng dẫn.
+   - Giữ token ở nơi riêng tư, không chia sẻ cho bất kỳ ai hoặc đưa vào mã nguồn.
+
+2. Khởi chạy:
+   - Chạy 【2_Khoi_chay_bang_dieu_khien.bat】 và giữ dashboard ở http://127.0.0.1:8765.
+   - Chạy 【3_Khoi_chay_bot_Telegram.bat】, nhập token và Telegram user ID được cấp quyền khi được hỏi.
+   - Nếu chưa biết user ID, để trống mục user ID, gửi /id cho bot rồi khởi động lại và nhập ID nhận được.
+   - Có thể cấp quyền cho nhiều user bằng dấu phẩy, ví dụ: 123456789,987654321.
+
+3. Cấu hình bằng biến môi trường nếu không dùng launcher:
+   set TELEGRAM_BOT_TOKEN=token_cua_ban
+   set TELEGRAM_ALLOWED_USER_IDS=123456789
+   python telegram_bot.py
+   Biến DASHBOARD_URL là tùy chọn, mặc định http://127.0.0.1:8765.
+
+4. Các lệnh:
+   - /status: tổng quan trạng thái hệ thống.
+   - /accounts: xem email, trạng thái, bước hiện tại và ngày hết hạn.
+   - /logs [1-30]: xem các dòng log mới nhất, ví dụ /logs 20.
+   - /run <account_id>: chạy một tài khoản, ví dụ /run Account_1.
+   - /runall: chạy toàn bộ tài khoản chưa hoàn tất.
+   - /stop [account_id]: dừng một tài khoản đang chạy hoặc toàn bộ tác vụ.
+   - /id: xem Telegram user ID.
+   - /help: xem hướng dẫn trong Telegram.
+
+5. Bảo mật:
+   - Chỉ user ID nằm trong TELEGRAM_ALLOWED_USER_IDS mới có thể điều khiển bot.
+   - Bot chỉ nhận lệnh trong chat riêng; không trả về mật khẩu, khóa 2FA hoặc thông tin thẻ.
+   - Token chỉ đọc từ biến môi trường, không ghi vào config.json.
 
 
-# 卡网：https://faka.cdkey.si
-# 博客：https://blog.caowo.de
-# TG群：@Hello_Florence
+# Trang thẻ: https://faka.cdkey.si
+# Blog: https://blog.caowo.de
+# Nhóm TG: @Hello_Florence
